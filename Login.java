@@ -21,7 +21,7 @@ public class Login {
 
 	@BeforeMethod()
 	@Parameters({ "browser" })
-	public void navigatingToTrello(@Optional("Firefox") String browser) {
+	public void navigatingToTrello(@Optional("Chrome") String browser) {
 		{
 			if (browser.equals("Firefox")) {
 				driver = new FirefoxDriver();
@@ -132,10 +132,10 @@ public class Login {
 		builder5.dragAndDrop(from5, to5).perform();
 		
 	}
-	// @AfterTest
-//	public void closeBrowser() {
-	// driver.close();
-	// driver.quit();
-	// }
+	@AfterTest
+	public void closeBrowser() {
+	 driver.close();
+	driver.quit();
+	}
 
 }
